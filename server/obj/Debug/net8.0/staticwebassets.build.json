@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "xiGKxlieRsdVa6ha1w6lnfmu7ALTkrhRxr/JWW7flLE=",
+  "Source": "EmotionalFeedbackTracker.Server",
+  "BasePath": "_content/EmotionalFeedbackTracker.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
