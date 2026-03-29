@@ -2,7 +2,6 @@
 
 **Lumina Tracker** is a professional, high-performance real-time emotional intelligence dashboard. It leverages browser-based neural networks (via `face-api.js`) to analyze facial expressions, detect engagement metrics, and track emotional trends with sub-100ms latency.
 
-![Project Preview](https://via.placeholder.com/1200x500/0a0a0f/6366f1?text=Emotion+AI+Lumina+Dashboard)
 
 ---
 
