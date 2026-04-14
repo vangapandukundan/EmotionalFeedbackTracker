@@ -79,8 +79,9 @@
 ---
 
 ## 📁 Project Structure
+   ```
 
-'''
+
 EmotionalFeedbackTracker/
 ├── Client/                 # React Frontend
 │   ├── src/
@@ -90,7 +91,7 @@ EmotionalFeedbackTracker/
 ├── server/                 # ASP.NET Core Backend
 │   ├── Models/             # Shared Data Entities
 │   └── Services/           # API Logic
-'''
+   ```
 
 ---
 
