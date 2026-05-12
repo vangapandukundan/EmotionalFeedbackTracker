@@ -1,0 +1,12 @@
+bin
+obj
+.git
+.gitignore
+.vs
+.vscode
+*.user
+node_modules
+dist
+.env
+.env.local
+publish
