@@ -13,16 +13,22 @@ builder.Services.AddSingleton<IEmotionDetectionService, EmotionDetectionService>
 // Add CORS
 builder.Services.AddCors(options =>
 {
-    var allowedOrigins = app.Environment.IsDevelopment()
-        ? new[] { "http://localhost:5173", "http://localhost:3000" }
-        : new[] { "https://emotionaltracker.vercel.app" }; // Vercel frontend
-    
     options.AddPolicy("AllowReactApp",
         policy =>
         {
-            policy.WithOrigins(allowedOrigins)
-                  .AllowAnyHeader()
-                  .AllowAnyMethod();
+            if (app.Environment.IsDevelopment())
+            {
+                policy.WithOrigins("http://localhost:5173", "http://localhost:3000")
+                      .AllowAnyHeader()
+                      .AllowAnyMethod();
+            }
+            else
+            {
+                // Allow from Vercel (update this with your actual Vercel URL)
+                policy.AllowAnyOrigin()
+                      .AllowAnyHeader()
+                      .AllowAnyMethod();
+            }
         });
 });
 

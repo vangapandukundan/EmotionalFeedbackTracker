@@ -12,12 +12,5 @@ export default defineConfig({
         secure: false
       }
     }
-  },
-  define: {
-    __API_BASE_URL__: JSON.stringify(
-      process.env.NODE_ENV === 'production'
-        ? 'https://emotionaltracker-api.onrender.com/api'
-        : '/api'
-    )
   }
 })
