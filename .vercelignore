@@ -1,0 +1,11 @@
+server
+*.sln
+*.csproj
+bin
+obj
+.git
+.gitignore
+.env
+.env.local
+.DS_Store
+README.md

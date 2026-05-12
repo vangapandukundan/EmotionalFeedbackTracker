@@ -10,21 +10,22 @@ builder.Services.AddSwaggerGen();
 // Register custom services
 builder.Services.AddSingleton<IEmotionDetectionService, EmotionDetectionService>();
 
-// Add CORS
+// Add CORS - Allow requests from frontend
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowReactApp",
+    options.AddPolicy("AllowFrontend",
         policy =>
         {
             if (app.Environment.IsDevelopment())
             {
-                policy.WithOrigins("http://localhost:5173", "http://localhost:3000")
+                // Development: Allow localhost
+                policy.WithOrigins("http://localhost:3000", "http://localhost:5173")
                       .AllowAnyHeader()
                       .AllowAnyMethod();
             }
             else
             {
-                // Allow from Vercel (update this with your actual Vercel URL)
+                // Production: Allow any origin (secure this later with your Vercel URL)
                 policy.AllowAnyOrigin()
                       .AllowAnyHeader()
                       .AllowAnyMethod();
@@ -42,7 +43,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseCors("AllowReactApp");
+app.UseCors("AllowFrontend");
 app.UseAuthorization();
 app.MapControllers();
 
